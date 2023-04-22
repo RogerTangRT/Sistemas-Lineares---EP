@@ -1,0 +1,3 @@
+*.pyc
+/Exercicios/__pycache__/*.pyc
+/EliminacaoGaussiana/__pycache__/*.pyc
