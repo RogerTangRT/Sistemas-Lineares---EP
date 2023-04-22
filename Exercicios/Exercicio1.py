@@ -22,9 +22,15 @@ def Exercicio1(titulo, nusp):
     imprimeTitulo('Resposta')
     print('magic_ishort:', end='')
     print(magic_ishort)
-    print('Como temos que reservar um bit para o sinal nos resta apenas ' +
-          str(magic_ishort - 1) + ' bits para representarmos o número.')
+    print('Usando a representação de (Sign-Magnitude) Os valores vão de:', -(2**(magic_ishort-1) -
+          1), ' até ', 2**(magic_ishort-1)-1)
+    print('Usando a representação de (Complement-Magnitude) Os valores vão de:', -
+          (2**(magic_ishort-1)), ' até ', 2**(magic_ishort-1)-1)
+    print('Como temos que reservar um bit para o sinal (sign bit) nos resta apenas ' +
+          str(magic_ishort - 1) + ' bits para representarmos o número (magnitude bits).')
     valor = 2**(magic_ishort - 1)
-    print('Entáo é possível representar até ' + str(valor) + ' números')
-    print('Como os valores numéricos se iniciam em 0, entáo temos que o valor máximo representado por 12 bits com sinal é de ' + str(valor-1))
-    imprimeTraco(100)
+    print(
+        'Temos que o valor máximo representado por 12 bits com sinal é de [** ', 2**(magic_ishort-1)-1, ' **]')
+    print('Observação: Complement-Magnitude permite a representação de um número a mais por conta de usar o "-0" como um valor negativo adicional')
+    imprimeTraco(180)
+    input("Press Enter to continue...")

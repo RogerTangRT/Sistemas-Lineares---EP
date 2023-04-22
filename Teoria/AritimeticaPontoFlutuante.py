@@ -1,5 +1,4 @@
-from Auxiliares import imprimeTitulo
-
+from Auxiliares import *
 # --------------------------------------------------------------------------------
 # MatematicaFurada
 # --------------------------------------------------------------------------------
@@ -20,12 +19,22 @@ def MatematicaFurada():
     print('Valor calculado r1 == r2 => ', end='')
     print(r1 == r2)
     print('A distributiva e associatividade não valem no computador ?!?!')
+    input("Press Enter to continue...")
+
+# --------------------------------------------------------------------------------
+# SomaValoresFracionarios
+# --------------------------------------------------------------------------------
 
 
 def SomaValoresFracionarios():
     imprimeTitulo('Soma de Valores Fracionários')
     print('.2 + .2 + .2 == 0.6')
     print(.2 + .2 + .2 == 0.6)
+    input("Press Enter to continue...")
+
+# --------------------------------------------------------------------------------
+# SomaFracao
+# --------------------------------------------------------------------------------
 
 
 def SomaFracao():
@@ -35,11 +44,16 @@ def SomaFracao():
     print('1/10 + 1/10 + ... 1/10 (10 vezes)')
     for i in range(n):
         sum += 1/n
+    print('Resultado', sum)
+    input("Press Enter to continue...")
+
+# --------------------------------------------------------------------------------
+# NumerosInteirosNoComputador
+# --------------------------------------------------------------------------------
 
 
 def NumerosInteirosNoComputador():
-    imprimeTitulo('NumerosInteirosNoComputador')
-    print('Números inteiros no computador')
+    imprimeTitulo('Numeros Inteiros No Computador')
     print('Suponha que tenho apenas 3 bits para representar inteiros (ignore o sinal). ')
     print('Ou seja, temos os números binários 000, 001, 011, 100, 110, ..., 111 que representam respectivamente')
     print('0, 1, 2, 3, 4, 5, ..., 7 sendo 7 o maior número que conseguimos representar.')
@@ -53,15 +67,16 @@ def NumerosInteirosNoComputador():
 
     print('a+b:' + str(a+b), 'bin(a+b):' + bin(a+b))
     print('bin(a+b) -> 4 bits e não 3')
+    input("Press Enter to continue...")
 # --------------------------------------------------------------------------------
 # Ponto de Entrada do módulo
 # --------------------------------------------------------------------------------
 
 
 def AritimeticaPontoFlutuante():
-    imprimeTitulo('Aritimetica de Ponto Flutuante')
+    imprimeTitulo(' TEORIA - '+'Aritimetica de Ponto Flutuante')
     MatematicaFurada()
     SomaValoresFracionarios()
     SomaFracao()
     NumerosInteirosNoComputador()
-    print('='*100)
+    imprimeTraco(180)
