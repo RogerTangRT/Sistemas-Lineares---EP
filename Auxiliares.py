@@ -21,3 +21,9 @@ def imprimeQuestao(numeroQuestao, titulo):
 
 def imprimeTraco(tamanho):
     print('='*tamanho)
+
+
+def MagicNumbers(nusp):
+    magic_ilong = int(str(nusp).replace("0", ""))
+    magic_ishort = int(str(magic_ilong)[:2])
+    return magic_ilong, magic_ishort

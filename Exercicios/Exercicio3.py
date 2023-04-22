@@ -57,8 +57,7 @@ def Exercicio3(titulo, nusp):
     # Imprime mágic Number
     # ----------------------------------------------------------------------------
     print("nusp  =", nusp)
-    magic_ilong = int(str(nusp).replace("0", ""))
-    magic_ishort = int(str(magic_ilong)[:2])
+    magic_ilong, magic_ishort = MagicNumbers(nusp)
     print("magic_ilong  =", magic_ilong)
     print("magic_ishort =", magic_ishort)
 

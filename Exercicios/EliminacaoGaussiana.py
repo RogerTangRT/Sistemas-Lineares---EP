@@ -165,7 +165,7 @@ def Questao35():
 
 
 def EliminacaoGaussiana(titulo, nusp):
-    magic_ilong = int(str(nusp).replace("0", ""))
+    magic_ilong, magic_ishort = MagicNumbers(nusp)
 
     imprimeTitulo(titulo)
     MeuSistemaLinear()

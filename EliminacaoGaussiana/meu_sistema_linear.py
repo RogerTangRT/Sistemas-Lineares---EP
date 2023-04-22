@@ -1,9 +1,10 @@
 import numpy as np
 import scipy.linalg as la
 
+from Auxiliares import MagicNumbers, imprimeTitulo
+
 nusp = 123045068
-magic_ilong = int(str(nusp).replace("0", ""))
-magic_ishort = int(str(magic_ilong)[:2])
+magic_ilong, magic_ishort = MagicNumbers(nusp)
 
 # Sistema linear para testes - específica para cada aluno
 # ------------------------------------------------------------
@@ -78,46 +79,12 @@ def meu_sistema_linear(n=100, magic_ilong=magic_ilong, cond_pow=8):
     # print()
     # print("a:", a) #imprimir a matriz aumentada
 
+    # Verificar se tem determinante nulo
+    # Aproveite e inclua no seu código uma condição para dizer se o sistema tem determinante nulo ou não.
+    detA = np.linalg.det(A)
+    imprimeTitulo('Determinante de A')
+    print(detA)
+    if (detA == 0):
+        imprimeTitulo('Determinante é nulo')
+
     return A, b, a
-
-
-def elim_gauss_vet(a_orig):
-    # Faço uma cópia, para não estragar a matriz original
-    a = np.copy(a_orig)
-
-    # Número de linhas e colunas
-    n, m = a.shape
-
-    # Vetor da solução
-    x = np.empty((n))
-
-    # Verifica se usuário forneceu uma matriz no formato certo
-    if m != n+1:
-        print("Essa matriz não tem dimensões adequadas:", n, m)
-        return x
-
-    # Escalonamento
-    for i in range(n):
-        if a[i, i] == 0.0:
-            print('Ainda não implementei pivotamento :-( ')
-            return x
-
-        for j in range(i+1, n):
-            ratio = a[j, i]/a[i, i]
-            # Vetorizei aqui!
-            # for k in range(n+1):
-            #    a[j,k] = a[j,k] - ratio * a[i,k]
-            a[j, :] = a[j, :] - ratio * a[i, :]
-
-    # Substituição
-    x[n-1] = a[n-1, n]/a[n-1, n-1]
-
-    for i in range(n-2, -1, -1):
-        # Vetorizei aqui!
-        #x[i] = a[i,n]
-        # for j in range(i+1,n):
-        #    x[i] = x[i] - a[i,j]*x[j]
-        #x[i] = x[i]/a[i,i]
-        x[i] = (a[i, n] - np.dot(a[i, i+1:n], x[i+1:n]))/a[i, i]
-
-    return x

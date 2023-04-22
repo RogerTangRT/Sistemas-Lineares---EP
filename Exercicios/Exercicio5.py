@@ -1,8 +1,7 @@
 import time
 import numpy as np
 from Auxiliares import *
-from EliminacaoGaussiana.elim_gauss_pivot_precisao_reduzida import elim_gauss_pivot_precisao_reduzida
-from EliminacaoGaussiana.elim_gauss_precisao_reduzida import elim_gauss_precisao_reduzida
+from EliminacaoGaussiana.elim_gauss_pivot_precisao_reduzida import elim_gauss_pivot_parcial_precisao_reduzida
 from EliminacaoGaussiana.meu_sistema_linear import meu_sistema_linear
 
 
@@ -21,7 +20,7 @@ def Questao51(nusp):
             'Chamada: elim_gauss pivot precisão reduzida (ROUND)(a) - Eliminação Gaussiana')
         imprimeTitulo('Retorna Solução sistema linear Ax=b')
         start_time = time.time()
-        x_vet = elim_gauss_pivot_precisao_reduzida(a, sigfig)
+        x_vet = elim_gauss_pivot_parcial_precisao_reduzida(a, sigfig)
         tempo_vet = time.time() - start_time
         print()
         print("Solução:", x_vet[:10])  # imprime só alguns elementos da solução
@@ -49,8 +48,7 @@ def Exercicio5(titulo, nusp):
     # Imprime mágic Number
     # ----------------------------------------------------------------------------
     print("nusp  =", nusp)
-    magic_ilong = int(str(nusp).replace("0", ""))
-    magic_ishort = int(str(magic_ilong)[:2])
+    magic_ilong, magic_ishort = MagicNumbers(nusp)
     print("magic_ilong  =", magic_ilong)
     print("magic_ishort =", magic_ishort)
     Questao51(nusp)

@@ -1,9 +1,10 @@
 import scipy.linalg as la
 import numpy as np
 
+from Auxiliares import MagicNumbers
+
 nusp = 12553156
-magic_ilong = int(str(nusp).replace("0", ""))
-magic_ishort = int(str(magic_ilong)[:2])
+magic_ilong, magic_ishort = MagicNumbers(nusp)
 
 # Método Clássico de Eliminação Gaussiana com aritmética de ponto flutuante restrita
 #

@@ -10,7 +10,7 @@ import numpy as np
 #            ou um erro quando isso não for possível
 
 
-def elim_gauss_pivot_precisao_reduzida(a_orig, sigfig=3):
+def elim_gauss_pivot_parcial_precisao_reduzida(a_orig, sigfig=3):
 
     # IMPLEMENTAR PIVOTAMENTO PARCIAL
 
