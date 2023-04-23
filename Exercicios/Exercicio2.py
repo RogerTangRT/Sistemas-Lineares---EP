@@ -12,6 +12,7 @@ def Questao21():
     imprimeQuestao(
         2.1, '(DICA: use a biblioteca sys.float_info (https://docs.python.org/3/library/sys.html) para saber mais sobre como o seu sistema trabalha com o tipo "float")')
     # Resposta
+    # O maior número representável em Pyton por aritmética de ponto flutuante no meu sistema é  1.7976931348623157e+308
     imprimeTitulo('Resposta')
     imprimeTitulo('Float Info')
     print(sys.float_info)
@@ -51,6 +52,7 @@ def Questao23():
     imprimeQuestao(
         2.3, 'Quantos dígitos são bem representados nesse sistema de aritmética de ponto flutuante? (DICA: use o sys.float_info)')
     # Resposta
+    # Segundo a função (sys.float_info), são  15  dígitos.
     imprimeTitulo('Resposta')
     print('Segundo a função (sys.float_info), são ',
           str(sys.float_info.dig), ' dígitos.')
@@ -138,6 +140,9 @@ def Questao26():
     # (−1)^0 × ​2^(10101101−01111111) ​× ​1.01101011110011000100001
     # Traduzindo decimal:
     # (−1)^0 × ​2^(46)                ×​ 1.42108547687530517578125 = 100000000376832.0
+    #
+    # 1.0e+14 = 100000000376832.0​×10^0
+    # 1.0e-14 =               0.00000000000000999999982451670044181213370393379591405391693115234375​×10^0
     input("Press Enter to continue...")
 
 # --------------------------------------------------------------------------------
@@ -183,6 +188,8 @@ def Questao28(nusp):
         2.8, 'Escreva o seu número USP como um int em binário.')
 
     # Resposta
+    # Número USP Inteiro 123045068
+    # Número USP Inteiro (binário) 0b111010101011000010011001100
     imprimeTitulo('Resposta')
     numeroUspInt = int(nusp)
     print('Número USP Inteiro', numeroUspInt)
