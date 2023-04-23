@@ -34,8 +34,23 @@ def elim_gauss_pivot_parcial_precisao_reduzida(a_orig, sigfig=3):
             print('Ainda não implementei pivotamento :-( ')
             return x
 
+        # Para evitar multiplicadores maior ou igual a 1 deve-se:
+        # Permutar as linhas de forma a manter a coluna ordenada de forma decrescente
+        # No caso de indices iguais na coluna, deve-se usar a proxima coluna como ordenação.
+        # Exemplo:
+        # A = [ [1., 1., 1.],
+        #       [2., -1., 1.],
+        #       [1., 2., -1.]]
+        # deve ficar assim:
+        # A = [ [2., -1., 1.],
+        #       [1., 2., -1.],
+        #       [1., 1., 1.]]
+
         for j in range(i+1, n):
             ratio = round(a[j, i]/a[i, i], sigfig)
+            if (abs(ratio) >= 1):
+                print('Multiplicador maior ou igual a 1')
+
             # Vetorizei aqui!
             for k in range(n+1):
                 a[j, k] = round(

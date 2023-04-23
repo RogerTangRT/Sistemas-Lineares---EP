@@ -1,10 +1,11 @@
 import sys
 from Auxiliares import *
 
-
 # --------------------------------------------------------------------------------
 # Questao 2.1
 # --------------------------------------------------------------------------------
+
+
 def Questao21():
     imprimeQuestao(
         2.1, 'Qual o maior número representável em Python por aritmética de ponto flutuante no sistema que você está usando?')
@@ -68,6 +69,7 @@ def Questao24():
     print('1.0e-23 + 1.0e-23 = ', 1.0e-23 + 1.0e-23)
     print('Justificativa:')
 
+    # R: 1.0e-23 + 1.0e-23 = 2e-23
     # O Número 1.0e-23 -> Representa-se em forma de float desta forma:
     # (−1)^0 × ​2^(00110010−01111111) ​× ​1.10000010110110110011010
     # Traduzindo decimal:
@@ -77,6 +79,7 @@ def Questao24():
     # (−1)^0 × ​2^(00110011−01111111) ​× 1.10000010110110110011010
     # Traduzindo decimal :
     # (−1)^0 × ​2^(51-127=-76)        ×​ 1.5111572742462158203125 = 2.0e-23
+    # A soma em ponto flutuante é feita normalizando os expoentes e somando-se as mantissas
     input("Press Enter to continue...")
 
 # --------------------------------------------------------------------------------
@@ -92,6 +95,7 @@ def Questao25():
     print('1.0 + 1.0e-23 = ', 1.0 + 1.0e-23)
     print('Justificativa:')
 
+    # R: 1.0 + 1.0e-23 = 1.0
     # O Número 1.0 -> Representa-se em forma de float desta forma:
     # sinal      expoente               mantissa
     # (−1)^0 × ​2^(01111111−01111111) ​× ​1.00000000000000000000000
@@ -117,6 +121,7 @@ def Questao26():
     print('1.0e+14 + 1.0e-14 = ', 1.0e+14 + 1.0e-14)
     print('Justificativa:')
 
+    # R: 1.0e+14 + 1.0e-14 =  100000000000000.0
     # O Número 1.0e+14 -> Representa-se em forma de float desta forma:
     # sinal      expoente               mantissa
     # (−1)^0 × ​2^(10101101−01111111) ​× ​1.01101011110011000100001
@@ -143,13 +148,29 @@ def Questao26():
 def Questao27():
     imprimeQuestao(
         2.7, 'Leia o tutorial https://docs.python.org/pt-br/3/tutorial/floatingpoint.html e comente por que o computador não consegue representar o número 0.1 exatamente. ')
+    imprimeTitulo('Resposta')
+    print('Não importa quantos dígitos de base 2 estejas disposto a usar, o valor decimal 0.1 não pode ser representado exatamente como uma fração de base 2.')
+    print('No sistema de base 2, 1/10 é uma fração binária que se repete infinitamente:')
+    print('Exemplo:0.0001100110011001100110011001100110011001100110011... ')
+    print('Se parares em qualquer número finito de bits, obterás uma aproximação. ')
+    print('Hoje em dia, na maioria dos computadores, as casas decimais são aproximados usando uma fração binária onde o numerado utiliza os ')
+    print('primeiros 53 bits iniciando no bit mais significativo e tendo como denominador uma potência de dois. No caso de 1/10, ')
+    print('a fração binária seria 602879701896397 / 2 ** 55 o que chega bem perto, mas mesmo assim, não é igual ao valor original de 1/10.')
+    print('É fácil esquecer que o valor armazenado é uma aproximação da fração decimal original, devido à forma como os floats são exibidos no interpretador interativo. ')
+
     imprimeQuestao(
         2.7, 'Qual número aproximado é alocado na memória e usado nas contas?')
     # Resposta
     imprimeTitulo('Resposta')
-    imprimeTitulo('Representação do número 0.1 =  1 / 10')
-    print(1 / 10)
-    print('Justificativa:')
+    print('Representação do número 0.1 =  1 / 10')
+    print('O Python exibe apenas uma aproximação decimal do verdadeiro valor decimal da aproximação binária armazenada pela máquina. ')
+    print('Se o Python exibisse o verdadeiro valor decimal da aproximação binária que representa o decimal 0.1, seria necessário mostrar:')
+    print('0.1000000000000000055511151231257827021181583404541015625')
+    print('0.1=', 0.1)
+
+    print('O Python contém muito mais dígitos do que é o esperado e utilizado pela grande maioria dos desenvolvedores, portanto, ')
+    print('o Python limita o número de dígitos exibidos, apresentando um valor arredondado, ao invés de mostrar todas as casas decimais')
+    print('1/10=', 1 / 10)
     input("Press Enter to continue...")
 
 # --------------------------------------------------------------------------------
