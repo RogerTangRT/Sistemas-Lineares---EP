@@ -30,10 +30,6 @@ def elim_gauss_pivot_parcial_precisao_reduzida(a_orig, sigfig=3):
 
     # Escalonamento
     for i in range(n):
-        if a[i, i] == 0.0:
-            print('Ainda não implementei pivotamento :-( ')
-            return x
-
         # Para evitar multiplicadores maior ou igual a 1 deve-se:
         # Permutar as linhas de forma a manter a coluna ordenada de forma decrescente
         # No caso de indices iguais na coluna, deve-se usar a proxima coluna como ordenação.
@@ -45,16 +41,25 @@ def elim_gauss_pivot_parcial_precisao_reduzida(a_orig, sigfig=3):
         # A = [ [2., -1., 1.],
         #       [1., 2., -1.],
         #       [1., 1., 1.]]
+        # TROCA DE LINHA NO PIVOTAMENTO
+        if a[i, i]:
+            if i > 0:
+                linhasAnteriores = a[0:i, 0:]
+                corte = a[i:n]
+                linhasOrdenadasDescendente = corte[corte[:, i].argsort()[
+                    ::-1][:n]]
+                # Concatena Linhas anteriores com linhas ordenadas
+                a = np.vstack([linhasAnteriores, linhasOrdenadasDescendente])
+            else:
+                linhasOrdenadasDescendente = a[a[:, i].argsort()[::-1][:n]]
+                a = linhasOrdenadasDescendente
 
         for j in range(i+1, n):
             ratio = round(a[j, i]/a[i, i], sigfig)
-            if (abs(ratio) >= 1):
-                print('Multiplicador maior ou igual a 1')
-
             # Vetorizei aqui!
             for k in range(n+1):
                 a[j, k] = round(
-                    a[j, k] - round(ratio * a[i, k], sigfig), sigfig)
+                    round(a[j, k], sigfig) - round(ratio * a[i, k], sigfig), sigfig)
 
     # Substituição
     x[n-1] = round(a[n-1, n]/a[n-1, n-1], sigfig)

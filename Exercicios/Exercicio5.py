@@ -13,7 +13,21 @@ def Questao51(nusp):
 
     # Resposta
     imprimeTitulo('Resposta')
-    A, b, a = meu_sistema_linear(30)
+    # sigfig=  4 Solução: [-0.003 -0.034  0.101 -0.063 -0.133  0.004  0.015  0.056 -0.055  0.046]
+    # sigfig=  5 Solução: [0.185 0.152 0.015 0.103 0.324 0.316 0.414 0.156 0.353 0.305]
+    # sigfig=  6 Solução: [0.702 0.653 0.718 0.768 0.646 0.678 0.666 0.706 0.687 0.669]
+    # sigfig=  7 Solução: [1.054 1.017 1.029 1.066 1.051 1.081 1.051 1.046 1.073 1.074]
+    # sigfig=  8 Solução: [1.    1.002 1.    0.999 1.001 1.    1.002 1.    1.    1.   ]
+    # sigfig=  9 Solução: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+    # sigfig= 10 Solução: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+    # sigfig= 11 Solução: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+    # sigfig= 12 Solução: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+    # sigfig= 13 Solução: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+    # sigfig= 13 Solução: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+    # sigfig= 13 Solução: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+    # sigfig= 13 Solução: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+
+    A, b, a = meu_sistema_linear(20)
 
     for sigfig in range(4, 16):
         imprimeTitulo(
@@ -21,6 +35,7 @@ def Questao51(nusp):
         imprimeTitulo('Retorna Solução sistema linear Ax=b')
         start_time = time.time()
         x_vet = elim_gauss_pivot_parcial_precisao_reduzida(a, sigfig)
+        print('sigfig=', sigfig)
         tempo_vet = time.time() - start_time
         print()
         print("Solução:", x_vet[:10])  # imprime só alguns elementos da solução

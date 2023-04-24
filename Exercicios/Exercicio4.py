@@ -26,6 +26,20 @@ def Questao41(nusp):
     # Monte uma tabela, ou gráfico, com o erro máximo da solução obtida em relação a solução obtida com precisão máxima do Python
     # (o "x" obtido com algoritmo original, sem arredondamentos).
     # Qual a razão de caimento do erro quando aumentamos 1 algarismo significativo (aproximadamente)?
+    #
+    # sigfig=  4 Solução: [ 0.003  0.002 -0.103 -0.217 -0.099 -0.212 -0.01   0.015 -0.097 -0.055]
+    # sigfig=  5 Solução: [-0.133 -0.016  0.005 -0.23   0.187 -0.02   0.021 -0.2    0.2    0.173]
+    # sigfig=  6 Solução: [ 0.463  0.561  0.559 -0.034  0.65   0.04   0.81   0.175  0.925  0.632]
+    # sigfig=  7 Solução: [1.038 1.023 0.979 1.068 1.037 1.073 1.018 1.028 1.005 1.03 ]
+    # sigfig=  8 Solução: [1.013 1.012 1.017 1.01  1.009 1.008 1.013 1.014 1.011 1.01 ]
+    # sigfig=  9 Solução: [1.    1.    1.    1.    1.    1.    1.    0.999 1.    1.   ]
+    # sigfig= 10 Solução: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+    # sigfig= 11 Solução: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+    # sigfig= 12 Solução: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+    # sigfig= 13 Solução: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+    # sigfig= 13 Solução: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+    # sigfig= 13 Solução: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+    # sigfig= 13 Solução: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
 
     A, b, a = meu_sistema_linear(30)
 
@@ -35,6 +49,7 @@ def Questao41(nusp):
         imprimeTitulo('Retorna Solução sistema linear Ax=b')
         start_time = time.time()
         x_vet = elim_gauss_precisao_reduzida(a, sigfig)
+        print('sigfig=', sigfig)
         tempo_vet = time.time() - start_time
         print()
         print("Solução:", x_vet[:10])  # imprime só alguns elementos da solução
