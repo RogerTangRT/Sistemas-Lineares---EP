@@ -50,9 +50,10 @@ def Polinomio(magic_ishort, sigfig):
     imprimeTitulo('Matriz extendida')
     print(a)
 
-    x_vet = elim_gauss_pivot_parcial_precisao_reduzida(a, sigfig)
+    #x_vet = elim_gauss_pivot_parcial_precisao_reduzida(a, sigfig)
+
     imprimeTitulo('Vetor Resposta')
-    print(x_vet)
+    # print(x_vet)
 
     input("Press Enter to continue...")
 
@@ -72,6 +73,6 @@ def TarefaFinal(titulo, nusp):
     magic_ilong, magic_ishort = MagicNumbers(nusp)
     print("magic_ilong  =", magic_ilong)
     print("magic_ishort =", magic_ishort)
-    Polinomio(nusp, 5)
+    Polinomio(nusp, 14)
 
     imprimeTraco(180)
