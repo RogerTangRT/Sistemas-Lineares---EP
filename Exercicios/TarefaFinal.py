@@ -24,6 +24,14 @@ def GeraArrayRespostas(N, magic_ishort):
         # print('y', k, '=', y[k])
     return y
 
+
+def criaMatrixVandermonde(N):
+    # Usado para criar a matriz vandermonde
+    x = np.array([1, 2, 3, 4, 5])
+    v = np.vander(x, N)
+    # Inverte as colunas
+    v = np.fliplr(v)
+    return v
 # --------------------------------------------------------------------------------
 # Calcula polinômio
 # --------------------------------------------------------------------------------
@@ -64,28 +72,23 @@ def Polinomio(magic_ishort, sigfig):
     # -125998145536 = a0 + a1*(4) + a2*(4)^2 + a3*(4)^3 + a4*(4)^4 + a5*(4)^5
     # -384515821875 = a0 + a1*(5) + a2*(5)^2 + a3*(5)^3 + a4*(5)^4 + a5*(5)^5
 
-    # -123045067    = a0 +  a1*1 +  a2*1  + a3*1   + a4*1   + a5*1              [   1    1    1    1    1    1]     [a0]    [-123045067]
-    # -3937442112   = a0 +  a1*2 +  a2*4  + a3*8   + a4*16  + a5*32             [  32   16    8    4    2    1]     [a1]    [-3937442112]
-    # -29899950795  = a0 +  a1*3 +  a2*9  + a3*27  + a4*81  + a5*243        =>  [ 243   81   27    9    3    1] *   [a2] =  [-29899950795]
-    # -125998145536 = a0 +  a1*4 +  a2*16 + a3*64  + a4*256 + a5*1024           [1024  256   64   16    4    1]     [a3]    [-125998145536]
-    # -384515821875 = a0 +  a1*5 +  a2*25 + a3*125 + a4*625 + a5*3125           [3125  625  125   25    5    1]     [a4]    [-384515821875]
+    # -123045067    = a0 +  a1*1 +  a2*1  + a3*1   + a4*1   + a5*1              [  1   1   1   1   1]     [a0]    [-123045067]
+    # -3937442112   = a0 +  a1*2 +  a2*4  + a3*8   + a4*16  + a5*32             [  1   2   4   8  16]     [a1]    [-3937442112]
+    # -29899950795  = a0 +  a1*3 +  a2*9  + a3*27  + a4*81  + a5*243        =>  [  1   3   9  27  81] *   [a2] =  [-29899950795]
+    # -125998145536 = a0 +  a1*4 +  a2*16 + a3*64  + a4*256 + a5*1024           [  1   4  16  64 256]     [a3]    [-125998145536]
+    # -384515821875 = a0 +  a1*5 +  a2*25 + a3*125 + a4*625 + a5*3125           [  1   5  25 125 625]     [a4]    [-384515821875]
 
     N = 5
     y = GeraArrayRespostas(N, magic_ishort)
-    imprimeTitulo('Vetor Resposta')
+    imprimeTitulo('Vetor Resposta y')
     print(y)
-
-    x = np.array([1, 2, 3, 4, 5])
-
-    v = np.vander(x, N)
+    v = criaMatrixVandermonde(N)
     imprimeTitulo('Matriz de Vandermonde')
-    # Inverte as colunas
-    v = np.fliplr(v)
     print(v)
     a = np.c_[v, y]
-    imprimeTitulo('Matriz extendida')
+    imprimeTitulo('Matriz Vandermonde extendida com resposta Y')
     print(a)
-
+    # Usando Gauss para resolver
     x_vet = elim_gauss_pivot_parcial_precisao_reduzida(a, sigfig)
 
     imprimeTitulo('Vetor Resposta')
@@ -100,6 +103,7 @@ def Polinomio(magic_ishort, sigfig):
 
 
 def TarefaFinal(titulo, nusp):
+    LimpaTela()
     imprimeTitulo(titulo)
 
     # ----------------------------------------------------------------------------
@@ -112,3 +116,4 @@ def TarefaFinal(titulo, nusp):
     Polinomio(nusp, 14)
 
     imprimeTraco(180)
+    input("Press Enter to continue...")

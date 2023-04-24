@@ -176,7 +176,7 @@ def Questao27():
     print('O Python contém muito mais dígitos do que é o esperado e utilizado pela grande maioria dos desenvolvedores, portanto, ')
     print('o Python limita o número de dígitos exibidos, apresentando um valor arredondado, ao invés de mostrar todas as casas decimais')
     print('1/10=', 1 / 10)
-    input("Press Enter to continue...")
+
 
 # --------------------------------------------------------------------------------
 # Questao 2.8
@@ -221,6 +221,7 @@ def Questao29(nusp):
 
 
 def Exercicio2(titulo, nusp):
+    LimpaTela()
     imprimeTitulo(titulo)
 
     # ----------------------------------------------------------------------------
@@ -241,3 +242,4 @@ def Exercicio2(titulo, nusp):
     Questao29(nusp)
 
     imprimeTraco(180)
+    input("Press Enter to continue...")

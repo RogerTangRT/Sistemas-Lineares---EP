@@ -1,6 +1,9 @@
 # --------------------------------------------------------------------------------
 # Imprime Título com traçaos antes de depois do tamanho do título
 # --------------------------------------------------------------------------------
+import os
+
+
 def imprimeTitulo(titulo):
     print('-'*len(titulo))
     print(titulo)
@@ -27,3 +30,7 @@ def MagicNumbers(nusp):
     magic_ilong = int(str(nusp).replace("0", ""))
     magic_ishort = int(str(magic_ilong)[:2])
     return magic_ilong, magic_ishort
+
+
+def LimpaTela():
+    os.system('cls')

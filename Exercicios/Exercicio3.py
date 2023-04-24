@@ -42,8 +42,6 @@ def Questao32(nusp):
     #                        7.237.900
     # Representação com ponto flutuante de 5 algarismos: 0.72379 x 10^2 = 7.237.900
     # Por conta de usar apenas 5 digitos perde-se precisão do número
-    input("Press Enter to continue...")
-
 
 # --------------------------------------------------------------------------------
 # Ponto de Entrada do módulo
@@ -51,6 +49,7 @@ def Questao32(nusp):
 
 
 def Exercicio3(titulo, nusp):
+    LimpaTela()
     imprimeTitulo(titulo)
 
     # ----------------------------------------------------------------------------
@@ -65,3 +64,4 @@ def Exercicio3(titulo, nusp):
     Questao32(nusp)
 
     imprimeTraco(180)
+    input("Press Enter to continue...")

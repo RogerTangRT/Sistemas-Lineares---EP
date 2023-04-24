@@ -1,4 +1,4 @@
-import os  # importa para limpar a tela
+from Auxiliares import LimpaTela
 from Teoria.AritimeticaPontoFlutuante import AritimeticaPontoFlutuante
 from Teoria.NumerosReaisComputador import NumerosReaisNoComputador
 from Exercicios.EliminacaoGaussiana import EliminacaoGaussiana
@@ -12,14 +12,14 @@ from Exercicios.TarefaFinal import TarefaFinal
 
 # Coloque aqui o seu número USP
 nusp = 123045068
-os.system('cls')
+LimpaTela()
 
 # AritimeticaPontoFlutuante()
-#Exercicio1('Exercicio 1', nusp)
+Exercicio1('Exercicio 1', nusp)
 # NumerosReaisNoComputador()
-#Exercicio2('Exercicio 2', nusp)
-#Exercicio3('Exercicio 3', nusp)
-#EliminacaoGaussiana('Eliminação Guassiana', nusp)
-#Exercicio4('Exercicio 4', nusp)
-#Exercicio5('Exercicio 5', nusp)
+Exercicio2('Exercicio 2', nusp)
+Exercicio3('Exercicio 3', nusp)
+EliminacaoGaussiana('Eliminação Guassiana', nusp)
+Exercicio4('Exercicio 4', nusp)
+Exercicio5('Exercicio 5', nusp)
 TarefaFinal('Tarefa Final', nusp)

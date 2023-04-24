@@ -5,6 +5,7 @@ from Auxiliares import *
 
 
 def Exercicio1(titulo, nusp):
+    LimpaTela()
     imprimeTitulo(titulo)
 
     # ----------------------------------------------------------------------------

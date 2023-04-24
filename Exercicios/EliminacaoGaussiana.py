@@ -142,6 +142,13 @@ def Questao33():
         3.3, 'Esse método que implementamos parece funcionar, mas está muito lento! Como podemos melhorar a sua performance?')
     # Resposta
     imprimeTitulo('Resposta')
+    print('É possível melhorar a performance vetorizando o código')
+    print('Exemplo:')
+    print('     for k in range(n+1):')
+    print('         a[j,k] = a[j,k] - ratio * a[i,k]')
+    print('Fica desta forma:')
+    print('a[j, :] = a[j, :] - ratio * a[i, :]')
+
     input("Press Enter to continue...")
 
 
@@ -150,6 +157,7 @@ def Questao34():
         3.4, 'O resíduo parece bem grande, por que não está mais perto de 10e-16? (que seria o erro de arredondamento esperado para uma aritmética de ponto flutuante com 64 bits (double float)).')
     # Resposta
     imprimeTitulo('Resposta')
+    print('Como x é calculado através de: Ux=y => x = y/U temos um acumulo do erro da divisão neste vetor. Por conta disso, o valor do resíduo é maior do que 10e-16')
     input("Press Enter to continue...")
 
 
@@ -166,7 +174,7 @@ def Questao35():
 
 def EliminacaoGaussiana(titulo, nusp):
     magic_ilong, magic_ishort = MagicNumbers(nusp)
-
+    LimpaTela()
     imprimeTitulo(titulo)
     MeuSistemaLinear()
     Questao32()

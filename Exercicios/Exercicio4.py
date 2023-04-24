@@ -64,6 +64,7 @@ def Questao41(nusp):
 
 
 def Exercicio4(titulo, nusp):
+    LimpaTela()
     imprimeTitulo(titulo)
 
     # ----------------------------------------------------------------------------
@@ -76,3 +77,4 @@ def Exercicio4(titulo, nusp):
     Questao41(nusp)
 
     imprimeTraco(180)
+    input("Press Enter to continue...")
