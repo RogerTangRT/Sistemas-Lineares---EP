@@ -38,20 +38,20 @@ def elim_gauss_precisao_reduzida(a_orig, sigfig=3):
             return x
 
         for j in range(i+1, n):
-            ratio = round(a[j, i]/a[i, i], sigfig)
+            ratio = np.round(a[j, i]/a[i, i], sigfig)
             # Vetorizei aqui!
             for k in range(n+1):
-                a[j, k] = round(
-                    a[j, k] - round(ratio * a[i, k], sigfig), sigfig)
+                a[j, k] = np.round(
+                    a[j, k] - np.round(ratio * a[i, k], sigfig), sigfig)
 
     # Substituição
-    x[n-1] = round(a[n-1, n]/a[n-1, n-1], sigfig)
+    x[n-1] = np.round(a[n-1, n]/a[n-1, n-1], sigfig)
 
     for i in range(n-2, -1, -1):
         # Vetorizei aqui!
         x[i] = a[i, n]
         for j in range(i+1, n):
-            x[i] = round(x[i] - round(a[i, j]*x[j], sigfig), sigfig)
-        x[i] = round(x[i]/a[i, i], sigfig)
+            x[i] = np.round(x[i] - np.round(a[i, j]*x[j], sigfig), sigfig)
+        x[i] = np.round(x[i]/a[i, i], sigfig)
 
     return x

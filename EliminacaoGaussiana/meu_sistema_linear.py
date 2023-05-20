@@ -3,7 +3,7 @@ import scipy.linalg as la
 
 from Auxiliares import MagicNumbers, imprimeTitulo
 
-nusp = 123045068
+nusp = 12553156
 magic_ilong, magic_ishort = MagicNumbers(nusp)
 
 # Sistema linear para testes - específica para cada aluno

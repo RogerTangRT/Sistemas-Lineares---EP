@@ -37,9 +37,9 @@ def Questao41(nusp):
     # sigfig= 11 Solução: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
     # sigfig= 12 Solução: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
     # sigfig= 13 Solução: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
-    # sigfig= 13 Solução: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
-    # sigfig= 13 Solução: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
-    # sigfig= 13 Solução: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+    # sigfig= 14 Solução: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+    # sigfig= 15 Solução: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+    # sigfig= 16 Solução: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
 
     A, b, a = meu_sistema_linear(30)
 

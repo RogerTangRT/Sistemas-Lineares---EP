@@ -176,13 +176,25 @@ def EliminacaoGaussiana(titulo, nusp):
     magic_ilong, magic_ishort = MagicNumbers(nusp)
     LimpaTela()
     imprimeTitulo(titulo)
-    MeuSistemaLinear()
-    Questao32()
-    tempo_orig, x = TesteUsandoMeuSistema(magic_ilong)
-    Questao33()
-    Questao34()
-    TesteUsandoMeuSistemaVetorizado(magic_ilong, tempo_orig, x)
-    TesteUsandoMeuSistemaLU(magic_ilong, tempo_orig, x)
-    Questao35()
+    # MeuSistemaLinear()
+    # Questao32()
+    # tempo_orig, x = TesteUsandoMeuSistema(magic_ilong)
+    # Questao33()
+    # Questao34()
+    #TesteUsandoMeuSistemaVetorizado(magic_ilong, tempo_orig, x)
+    #TesteUsandoMeuSistemaLU(magic_ilong, tempo_orig, x)
+
+    A, b, a = meu_sistema_linear(300, magic_ilong)
+    # x = 1
+    # y = 2
+    # z = 3
+    #  x+y+z=6
+    # 2x+y-z=1
+    #  x-y+z=2
+    A = np.array([[1., 1., 1.], [2., 1., -1.], [1., -1., 1.]])
+    b = np.array([6., 1., 2.])
+    x_LU, L, U = elim_gauss_LU(A, b)
+
+    # Questao35()
 
     imprimeTraco(180)

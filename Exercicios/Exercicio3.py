@@ -15,8 +15,9 @@ def Questao31(nusp):
     imprimeTitulo('Resposta')
     # São necessário 9 algarismos
     # 0.123045068 x 10^9 =>  Pela representaçãp 0,AAAAA... x 10^B seria necessário 9 dígitos
-    print('São necessário 9 algarismos')
-    print('0.123045068 x 10^9 =>  Pela representaçãp 0,AAAAA... x 10^B seria necessário 9 dígitos')
+    print(0.12553156 * 10**-8)
+    print('São necessário 8 algarismos')
+    print('0.12553156 x 10^8 =>  Pela representaçãp 0,AAAAA... x 10^B seria necessário 8 dígitos')
     input("Press Enter to continue...")
 
 # --------------------------------------------------------------------------------
@@ -33,8 +34,9 @@ def Questao32(nusp):
     # Resposta
     imprimeTitulo('Resposta')
     print('nusp/17: ', nusp/17)
-    print('nusp 123045068 / 17 =  7.237.945,176470588')
-    print('Representação com ponto flutuante de 5 algarismos: 0.72379 x 10^2 = 7.237.900')
+    print('nusp 123045068 / 17 =  738.420,9411764706')
+    print(0.73842 * 10**6)
+    print('Representação com ponto flutuante de 5 algarismos: 0.73842 x 10^1 = 7.237.900')
     print('nusp 123045068 / 17 =  7.237.900')
     print('Por conta de usar apenas 5 digitos perde-se precisão do número')
 
